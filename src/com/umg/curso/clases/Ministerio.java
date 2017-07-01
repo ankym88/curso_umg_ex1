@@ -10,7 +10,7 @@ public class Ministerio {
     private int cantReal;
 
     public Ministerio(int cantDeportes) {
-        listado = new Deporte[10];
+        listado = new Deporte[cantDeportes];
         cantReal = 0;
 
     }

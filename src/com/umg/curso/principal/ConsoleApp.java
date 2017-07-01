@@ -49,7 +49,7 @@ public class ConsoleApp {
                         System.out.println("Nombre del deporte:");
                         Deporte deporte = new Deporte(sn.next());
                         System.out.println("Con balón? (S/N):");
-                        if (sn.next().equals("S"))
+                        if (sn.next().equalsIgnoreCase("S"))
                             deporte.setConBalon(true);
                         ministerio.adicionarDeporte(deporte);
 
@@ -58,7 +58,7 @@ public class ConsoleApp {
                         Deporte[] listado = ministerio.getListado();
                         for (int i = 0; i <ministerio.getCantReal() ; i++) {
                             if(listado[i].isConBalon())
-                            System.out.printf("Deporte #"+i+1+ ": "+listado[i].getNombre()+"\n");
+                            System.out.printf("Deporte #"+(i+1)+ ": "+listado[i].getNombre()+"\n");
                         }
                         System.out.println("--------------");
                         break;
