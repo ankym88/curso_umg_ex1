@@ -1,17 +1,22 @@
 package com.umg.curso.clases;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by ore on 28/06/17.
  */
 public class Ministerio {
 
     private Deporte[] listado;
+    private List<Deportista> listadoDeportistas;
     private Especialista especialista;
     private int cantReal;
 
     public Ministerio(int cantDeportes) {
         listado = new Deporte[cantDeportes];
         cantReal = 0;
+        listadoDeportistas=new ArrayList<>();
 
     }
 
@@ -37,6 +42,30 @@ public class Ministerio {
 
     public void setCantReal(int cantReal) {
         this.cantReal = cantReal;
+    }
+
+    public List<Deportista> getListadoDeportistas() {
+        return listadoDeportistas;
+    }
+
+    public void adicionarDeportista(Deportista d){
+
+        if (d.getEdad()>60)
+            listadoDeportistas.add(0,d);
+        else listadoDeportistas.add(d);
+
+
+    }
+
+    public float promedioEdad(){
+        int suma=0;
+
+        for (Deportista d:listadoDeportistas
+             ) {
+            suma+=d.getEdad();
+
+        }
+        return suma/listadoDeportistas.size();
     }
 
 
